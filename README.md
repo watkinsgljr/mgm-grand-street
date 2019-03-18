@@ -12,7 +12,7 @@ Once enemy is selected the remainding will always be shifted center and space be
 New display will show two fighters in the boxing ring.  Each fighter will have health points bar underneath photo.  
 HP bar will start green.  It will turn light green at 75%, yellow at 50% and red at 25%.  Bar will start at 100% width and decrease as HP decreases in realationship with starting HP.
 
-Once players are in the ring, the user will be able to press button shaped like a boxing glove that will resize on mouse down and go bak to original size on mouse up.
+Once players are in the ring, the user will be able to press button shaped like a boxing glove that will resize on mouse down and go back to original size on mouse up.
 Game Play
 Mouse up or on click event will trigger function that initializes:
 Player attack
@@ -28,4 +28,9 @@ One of two random mesages will appear:
 You beat your opponent by knockout (or decision), select your next opponent.
 Opponent selects next opponent and after selection defeated opponent is sent back to the oppoonent div (far right) with adjusted opacity.
 If opponent HP = 0.. choose next opponent.
+
+Player vs second opponent same as previous fight.
+Plater attributes carry over into next round.
+
+Player defeating all opponents || player dying ends game.
 
