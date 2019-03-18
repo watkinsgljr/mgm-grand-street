@@ -40,3 +40,12 @@ let roy = {
 
 let playerScore = 0;
 let opponentScore = 0;
+
+ const mikeCard = $('#mike-card-holder');
+ const aliCard = $('#mike-card-holder');
+ const mayweatherCard = $('#mike-card-holder');
+ const royCard = $('#mike-card-holder');
+
+ mikeCard.click(function () {
+     alert('testing 123');
+ });
