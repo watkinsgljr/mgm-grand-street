@@ -32,6 +32,8 @@ h6 {
 
 .grid-container {
     display: grid;
+    grid-template-columns: 20% 50% 20%
+    margin: auto;
 }
 
 #select-player-container {
@@ -150,6 +152,7 @@ img {
 #hp-bar {
     grid-column: 1 / span 1;
     grid-row: 5 / span 1;
+    background-color: green;
 }
 
 #ring-area {
@@ -180,6 +183,7 @@ img {
 #opponent-hp-bar {
     grid-column: 3 / span 1;
     grid-row: 5 / span 1;
+    background-color: green;
 }
 
   
