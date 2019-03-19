@@ -40,12 +40,95 @@ let roy = {
 
 let playerScore = 0;
 let opponentScore = 0;
+let playerSet = false;
+const boxerCard = $('.boxer-card-holder');
+const mikeCard = $('#mike-card-holder');
+const aliCard = $('#ali-card-holder');
+const mayweatherCard = $('#mayweather-card-holder');
+const royCard = $('#roy-card-holder');
 
- const mikeCard = $('#mike-card-holder');
- const aliCard = $('#mike-card-holder');
- const mayweatherCard = $('#mike-card-holder');
- const royCard = $('#mike-card-holder');
+ //Function upon selecting player
 
- mikeCard.click(function () {
-     alert('testing 123');
+mikeCard.click(function () {
+    if (playerSet == false) {
+        $(this).appendTo('#ring-area');
+        mike.isPlayer = true;
+        playerSet = true;
+        console.log(mike.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Select Your First Opponent');       
+    } else {
+        $(this).appendTo('#ring-area');
+        console.log(mike.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Round 1: FIGHT');
+    }
  });
+
+aliCard.click(function () {
+    if (playerSet == false) {
+        $(this).appendTo('#ring-area');
+        ali.isPlayer = true;
+        playerSet = true;
+        console.log(ali.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Select Your First Opponent');       
+    } else {
+        $(this).appendTo('#ring-area');
+        console.log(ali.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Round 1: FIGHT');
+    }
+ });
+
+mayweatherCard.click(function () {
+    if (playerSet == false) {
+        $(this).appendTo('#ring-area');
+        mayweather.isPlayer = true;
+        playerSet = true;
+        console.log(mayweather.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Select Your First Opponent');       
+    } else {
+        $(this).appendTo('#ring-area');
+        console.log(mayweather.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Round 1: FIGHT');
+    }
+ });
+
+royCard.click(function () {
+    if (playerSet == false) {
+        $(this).appendTo('#ring-area');
+        roy.isPlayer = true;
+        playerSet = true;
+        console.log(roy.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Select Your First Opponent');       
+    } else {
+        $(this).appendTo('#ring-area');
+        console.log(roy.isPlayer);
+        console.log(playerSet);
+        $(this).width('30%');
+        $('#welcome-text h1').text('Round 1: FIGHT');
+    }
+ });
+
+ 
+
+//Load object into dashboard
+
+
+ //HP bar logic
+
+//Beginning player and opponent selection
+
+
+
