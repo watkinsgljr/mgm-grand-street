@@ -190,13 +190,13 @@ img {
 }
 
 #player-corner {
-    /* border: solid red 1px; */
+    border: solid peru 1px;
     max-width: 300px;
     height: 100%;
 }
 
 #opponent-corner {
-    /* border: solid red 1px; */
+    border: solid peru 1px;
     height: 100%;
 }
 
