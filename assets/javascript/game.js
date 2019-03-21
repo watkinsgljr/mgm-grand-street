@@ -38,7 +38,7 @@ const mayweather = {
     healthPointsBase: 110,
     basePower: 7,
     attackPower: 4,
-    counterAttack: 8,  
+    counterAttack: 15,  
     isPlayer: false,
     currentOpponent: false,
     opponentDefeated: false ,
