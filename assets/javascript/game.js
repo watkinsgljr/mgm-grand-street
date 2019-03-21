@@ -1,8 +1,11 @@
+// BOXER OBJECTS ------------------------------------------------------------------------------
+
 const mike = {
     firstName: 'Mike',
     lastName: 'Tyson',
     nickName: 'Iron Mike',
     healthPoints: 80,
+    healthPointsBase: 80,
     basePower: 7,
     attackPower: 7,
     counterAttack: 5,
@@ -17,6 +20,7 @@ const ali = {
     lastName: 'Ali',
     nickName: 'The Greatest',
     healthPoints: 80,
+    healthPointsBase: 80,
     basePower: 7,
     attackPower: 5,
     counterAttack: 5,
@@ -31,6 +35,7 @@ const mayweather = {
     lastName: 'Mayweather',
     nickName: 'Money Mayweather',
     healthPoints: 110,
+    healthPointsBase: 110,
     basePower: 7,
     attackPower: 4,
     counterAttack: 8,  
@@ -45,6 +50,7 @@ const roy = {
     lastName: 'Jones',
     nickName: 'Captain Hook',
     healthPoints: 100,
+    healthPointsBase: 100,
     basePower: 7,
     attackPower: 6,
     counterAttack: 8, 
@@ -59,6 +65,7 @@ let currentPlayer;
 let currentOpponent;
 let defeatedOpponents = [];
 let playerSet = false;
+let opponentSet = false;
 const boxerCard = $('.boxer-card-holder');
 const mikeCard = $('#mike-card-holder');
 const aliCard = $('#ali-card-holder');
@@ -72,89 +79,96 @@ let counterPunch = $('opponent-counter-power');
 
 mikeCard.click(function () {
     if (playerSet == false) {
-        $(this).appendTo('#ring-area');
+        $(this).appendTo('#player-corner');
+        mike.isPlayer = true;
         currentPlayer = Object.assign({}, mike);
-        console.log(currentPlayer)
         playerSet = true;
-        $(this).width('30%');
-        // $('#hp-bar').width('50%');
+        $(this).width('100%');
+        $(this).height('100%');
         $('#welcome-text h1').text('Select Your First Opponent');  
         loadDash(mike);     
     } else if (mike.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
-    } else {
-        $(this).appendTo('#ring-area');
+    } else if (opponentSet == true) {
+          alert('Opponenent already selected. Time to fight!')
+      } else {
+        $(this).appendTo('#opponent-corner');
         currentOpponent = Object.assign({}, mike);
-        console.log(currentOpponent)
-        $(this).width('30%');
-        $('#welcome-text h1').text('Round 1: FIGHT');
+        opponentSet = true;
+        $(this).width('100%');
+        $(this).height('100%');
+        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        opponentSet = true;
         loadDash(mike);
     }
  });
 
 aliCard.click(function () {
     if (playerSet == false) {
-        $(this).appendTo('#ring-area');
-        currentPlayer = Object.assign({}, ali);
+        $(this).appendTo('#player-corner');
         ali.isPlayer = true;
+        currentPlayer = Object.assign({}, ali);
         playerSet = true;
-        console.log(ali.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
+        $(this).width('100%');
+        $(this).height('100%');
         $('#welcome-text h1').text('Select Your First Opponent');       
     } else if (ali.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
+    } else if (opponentSet == true) {
+        alert('Opponenent already selected. Time to fight!')
     } else {
-        $(this).appendTo('#ring-area');
+        $(this).appendTo('#opponent-corner');
         currentOpponent = Object.assign({}, ali);
-        console.log(ali.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
-        $('#welcome-text h1').text('Round 1: FIGHT');
+        $(this).width('100%');
+        $(this).height('100%');
+        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        opponentSet = true;
     } loadDash(ali);
  });
 
 mayweatherCard.click(function () {
     if (playerSet == false) {
-        $(this).appendTo('#ring-area');
-        currentPlayer = Object.assign({}, mayweather);
+        $(this).appendTo('#player-corner');
         mayweather.isPlayer = true;
+        currentPlayer = Object.assign({}, mayweather);
         playerSet = true;
-        console.log(mayweather.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
+        $(this).width('100%');
+        $(this).height('100%');
         $('#welcome-text h1').text('Select Your First Opponent');       
     } else if (mayweather.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
+    } else if (opponentSet == true) {
+        alert('Opponenent already selected. Time to fight!')
     } else {
-        $(this).appendTo('#ring-area');
+        $(this).appendTo('#opponent-corner');
         currentOpponent = Object.assign({}, mayweather);
-        console.log(mayweather.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
-        $('#welcome-text h1').text('Round 1: FIGHT');
+        $(this).width('100%');
+        $(this).height('100%');
+        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        opponentSet = true;
     } loadDash(mayweather);
  });
 
 royCard.click(function () {
     if (playerSet == false) {
-        $(this).appendTo('#ring-area');
-        currentPlayer = Object.assign({}, roy);
+        $(this).appendTo('#player-corner');
         roy.isPlayer = true;
+        currentPlayer = Object.assign({}, roy);
         playerSet = true;
-        console.log(roy.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
+        $(this).width('100%');
+        $(this).height('100%');
         $('#welcome-text h1').text('Select Your First Opponent');       
     } else if (roy.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
+    } else if (opponentSet == true) {
+        alert('Opponenent already selected. Time to fight!')
     } else {
-        $(this).appendTo('#ring-area');
+        $(this).appendTo('#opponent-corner');
         currentOpponent = Object.assign({}, roy);
-        console.log(roy.isPlayer);
-        console.log(playerSet);
-        $(this).width('30%');
-        $('#welcome-text h1').text('Round 1: FIGHT');
+        $(this).width('100%');
+        $(this).height('100%');
+        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        opponentSet = true;
     } loadDash(roy);
  });
 
@@ -163,7 +177,7 @@ royCard.click(function () {
 //Load object into dashboard ----------------------------------------------------------------------
 
 function loadDash (player) {
-    if (player.isPlayer === true) {
+    if (player.isPlayer == true) {
        $('#player-punch-power').text(player.attackPower); 
     } else $('#opponent-counter-power').text(player.counterAttack);
 };
@@ -173,18 +187,24 @@ function loadDash (player) {
  //HP bar logic---------------------------------------------------------------------------------------------
 
  function resizeHPBar(player) {
-    const hpBeg = currentPlayer.healthPoints;
-    let hpCurrent = currentPlayer.healthPoints;
-    let hpBarLengthPerc = (hpBeg / hpCurrent) * 100;
-    $('#hp-bar').width((hpBarLengthPerc * 100 + '%'));
-    return(hpBarLengthPerc);
+    const hpBeg = player.healthPointsBase;
+    let hpCurrent = player.healthPoints;
+    let hpBarLengthPerc = (hpCurrent / hpBeg) * 100;
+    $('#hp-bar').css('width', hpBarLengthPerc.toString() + '%');
+}
+
+function resizeOpponentHPBar(player) {
+    const hpBeg = player.healthPointsBase;
+    let hpCurrent = player.healthPoints;
+    let hpBarLengthPerc = (hpCurrent / hpBeg) * 100;
+    $('#opponent-hp-bar').css('width', hpBarLengthPerc.toString() + '%');
 }
 
 //Fight - attack button on click ------------------------------------------------------------------------------------
 
 $('#attack').click(function attack () {
     if (currentOpponent == null) {
-        alert("Select your next match.")
+        alert("Select your next opponent.")
 
     } else {
 
@@ -192,13 +212,10 @@ $('#attack').click(function attack () {
     currentPlayer.attackPower += currentPlayer.basePower;
     loadDash(currentPlayer);
     loadDash(currentOpponent);
-    console.log(currentPlayer.attackPower) 
-    console.log(currentOpponent.healthPoints)
-    
-    resizeHPBar();
+    resizeOpponentHPBar(currentOpponent);
     } if (currentOpponent.healthPoints > 0) {
         currentPlayer.healthPoints -= currentOpponent.counterAttack;
-        console.log(currentPlayer.healthPoints)
+        resizeHPBar(currentPlayer);
     } else if (currentOpponent.healthPoints <= 0) {
         opponentDefeated();
     }; 
@@ -210,13 +227,23 @@ function opponentDefeated() {
     currentOpponent.opponentDefeated = true;
     console.log(currentOpponent.opponentDefeated)
     $('#' + currentOpponent.id).unbind("click");
-    defeatedOpponents.push(currentOpponent.lastName);
+    defeatedOpponents.push(currentOpponent.id);
     console.log(defeatedOpponents)
+    opponentSet = false;
     currentOpponent = null;
+    if (defeatedOpponents.length == 3) {
+        winGame();
+    }
     
-    console.log()
-    //grey out card with grey overlay...opponent.show
 };
+
+function winGame() {
+    $.each(defeatedOpponents, function(index, item) {
+    $('#' + item).fadeOut('slow')
+    $('#attack').attr('disabled', true);
+    $(currentPlayer).animate({margin: 'auto'}, 'slow');
+    });
+}
 
 
 
@@ -233,6 +260,11 @@ function opponentDefeated() {
 
 // https://www.codeproject.com/Questions/736336/How-Can-I-Diable-Click-On-A-Div
 
+// https://www.w3schools.com/howto/howto_css_flip_card.asp
+
+// http://api.jquery.com/jquery.each/
+
+// https://www.mkyong.com/jquery/how-to-disable-submit-button-after-clicked-with-jquery/
 
 
 

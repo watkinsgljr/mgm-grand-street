@@ -1,31 +1,41 @@
+body {
+    font-family: 'Luckiest Guy', cursive;
+}
+
 h1 {
-    font-size: 36px;
+    font-size: 45px;
     line-height: 40px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h2 {
     font-size: 30px;
     line-height: 40px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h3 {
     font-size: 24px;
     line-height: 40px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h4 {
     font-size: 18px;
     line-height: 20px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h5 {
     font-size: 14px;
     line-height: 20px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h6 {
     font-size: 12px;
     line-height: 20px;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 .grid-container {
@@ -37,11 +47,15 @@ h6 {
 
 button {
     margin: auto;
+    position: relative;
+    height: 3rem;
+    width: 5rem;
+    top: 8rem;
 }
 
 #select-player-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -50,7 +64,7 @@ button {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    /* max-width: 250px; */
 }
 
 #ali-photo-holder {
@@ -76,13 +90,12 @@ button {
 
 img {
     width: 100%;
-    max-height: 200px;
+    height: 250px;
 }
 
-/* .boxer-card-holder {
-    height: 5rem;
-    width: 5rem;
-} */
+.boxer-card-holder {
+    max-width: 300px;
+}
 
 .flip-card {
     background-color: transparent;
@@ -117,8 +130,8 @@ img {
 
   .flip-card-front .flip-card-back {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 250px;
+    height: 250px;
     -webkit-backface-visibility: hidden; 
   }
 
@@ -172,6 +185,19 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     position: reltaive;
+    display: flex;
+    justify-content: space-between;
+}
+
+#player-corner {
+    border: solid red 1px;
+    max-width: 300px;
+    height: 100%;
+}
+
+#opponent-corner {
+    border: solid red 1px;
+    height: 100%;
 }
 
 #opponent-area {

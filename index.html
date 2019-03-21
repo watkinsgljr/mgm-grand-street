@@ -8,6 +8,7 @@
     <link href="./assets/css/reset.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/styles.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <title>MGM Grand Street</title>
 </head>
 
@@ -21,11 +22,15 @@
         <div class="grid-item" id="player-punch-power">
             <div>8</div>
         </div>
-        <div class="grid-item" id="hp-text">HP</div>
+        <div class="grid-item" id="hp-text">Player HP Bar</div>
         <div class="grid-item" id="hp-bar-holder">
-            <div id='hp-bar'>bar goes here</div>
+            <div id='hp-bar'>.</div>
         </div>
-        <div class="grid-item" id="ring-area"><button id="attack" type="button">Attack</button></div>
+        <div class="grid-item" id="ring-area">
+            <div id="player-corner"></div>
+            <div id="ring"><button id="attack" type="button">Attack</button></div>
+            <div id="opponent-corner"></div>
+        </div>
         <div class="grid-item" id="opponent-area">
                 <div id="select-player-container">
                         <div class="boxer-card-holder flip-card" id="mike-card-holder">
@@ -108,10 +113,10 @@
             <div>10</div>
         </div>
         <div class="grid-item" id="opponent-hp-text">
-            <div>Opponent HP</div>
+            <div>Opponent HP Bar</div>
         </div>
         <div class="grid-item" id="opponent-hp-bar-holder">
-            <div id='opponent-hp-bar'>bar goes here</div>
+            <div id='opponent-hp-bar'>.</div>
         </div>
     </div>
 
