@@ -35,6 +35,10 @@ h6 {
     height: 90vh;
 }
 
+button {
+    margin: auto;
+}
+
 #select-player-container {
     display: flex;
     justify-content: center;
