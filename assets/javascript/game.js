@@ -222,7 +222,7 @@ $('#attack').click(function attack () {
 }); 
 
 function opponentDefeated() {
-    $('#' + currentOpponent.id).appendTo($('#opponent-area'));
+    $('#' + currentOpponent.id).appendTo($('#select-player-container'));
     $('#' + currentOpponent.id).css("opacity", .4);
     currentOpponent.opponentDefeated = true;
     console.log(currentOpponent.opponentDefeated)
@@ -242,6 +242,7 @@ function winGame() {
     $('#' + item).fadeOut('slow')
     $('#attack').attr('disabled', true);
     $(currentPlayer).animate({margin: 'auto'}, 'slow');
+    $('#select-player-container h1').text('You Win!!');
     });
 }
 

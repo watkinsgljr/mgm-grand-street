@@ -16,3 +16,15 @@
 //      }
     
 // }
+
+function palindromeCheck(string) {
+    for (i = 0; i < string.length; i++)
+    if (string.length <= 1) {
+      return true;
+    } else if (string[0] == string[string.length - 1]) {
+    var removed = string.splice(0,-1);
+    } else return false;
+        
+}
+
+palindromeCheck('poop');
