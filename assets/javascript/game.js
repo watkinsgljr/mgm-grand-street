@@ -111,7 +111,7 @@ aliCard.click(function () {
         playerSet = true;
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Select Your First Opponent');       
+        $('#welcome-text h2').text('Select Your First Opponent');       
     } else if (ali.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
     } else if (opponentSet == true) {
@@ -121,7 +121,7 @@ aliCard.click(function () {
         currentOpponent = Object.assign({}, ali);
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        $('#welcome-text h2').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
         opponentSet = true;
     } loadDash(ali);
  });
@@ -134,7 +134,7 @@ mayweatherCard.click(function () {
         playerSet = true;
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Select Your First Opponent');       
+        $('#welcome-text h2').text('Select Your First Opponent');       
     } else if (mayweather.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
     } else if (opponentSet == true) {
@@ -144,7 +144,7 @@ mayweatherCard.click(function () {
         currentOpponent = Object.assign({}, mayweather);
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        $('#welcome-text h2').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
         opponentSet = true;
     } loadDash(mayweather);
  });
@@ -157,7 +157,7 @@ royCard.click(function () {
         playerSet = true;
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Select Your First Opponent');       
+        $('#welcome-text h2').text('Select Your First Opponent');       
     } else if (roy.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
     } else if (opponentSet == true) {
@@ -167,7 +167,7 @@ royCard.click(function () {
         currentOpponent = Object.assign({}, roy);
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
+        $('#welcome-text h2').text('Round ' + (defeatedOpponents.length + 1) + ': FIGHT!');
         opponentSet = true;
     } loadDash(roy);
  });
@@ -180,6 +180,7 @@ function loadDash (player) {
     if (player.isPlayer == true) {
        $('#player-punch-power').text(player.attackPower); 
     } else $('#opponent-counter-power').text(player.counterAttack);
+   
 };
 
 
@@ -218,7 +219,9 @@ $('#attack').click(function attack () {
         resizeHPBar(currentPlayer);
     } else if (currentOpponent.healthPoints <= 0) {
         opponentDefeated();
-    }; 
+    } else if (currentPlayer.healthPoints <= 0) {
+        loseGame();
+    } 
 }); 
 
 function opponentDefeated() {
@@ -243,8 +246,16 @@ function winGame() {
     $('#attack').attr('disabled', true);
     $(currentPlayer).animate({margin: 'auto'}, 'slow');
     $('#select-player-container h1').text('You Win!!');
+    $('#welcome-text h1').text('You Win!! ' + currentPlayer.nickName + ' is the Champ!!');
     });
 }
+
+function loseGame() {
+    $('#' + currentPlayer.id).fadeOut('slow')
+    $('#attack').attr('disabled', true);
+    // $('#select-player-container h1').text('You Win!!');
+    $('#welcome-text h2').text('You Lose!! ' + currentOpponent.nickName + ' is the new Champ!!');
+};
 
 
 

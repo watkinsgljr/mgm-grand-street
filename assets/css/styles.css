@@ -44,7 +44,11 @@ h6 {
     display: grid;
     grid-template-columns: 10% 80% 10%;
     margin: auto;
-    height: 90vh;
+    height: 70%;
+}
+
+.punch-tracker {
+    font-size: 3rem;
 }
 
 button {
@@ -169,6 +173,7 @@ img {
 #player-punch-power {
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
+    font-size: 3rem;
 }
 
 #hp-text {
@@ -179,7 +184,7 @@ img {
 #hp-bar {
     grid-column: 1 / span 1;
     grid-row: 5 / span 1;
-    background-color: green;
+    background: linear-gradient(to right, red, yellow, green);
     height: 2rem;
     color: green;
 }
@@ -221,7 +226,7 @@ img {
     height: 20rem;
     background: linear-gradient(to right, gold, black, gold);
     padding: 6px;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 #opponent-counter-power-text {
@@ -232,6 +237,7 @@ img {
 #opponent-counter-power {
     grid-column: 3 / span 1;
     grid-row: 3 / span 1;
+    font-size: 3rem;
 }
 
 #opponent-hp-text {
@@ -242,10 +248,9 @@ img {
 #opponent-hp-bar {
     grid-column: 3 / span 1;
     grid-row: 5 / span 1;
-    background-color: green;
+    background: linear-gradient(to right, red, yellow, green);
     height: 2rem;
     color: green;
-    margin: auto;
 }
 
   
