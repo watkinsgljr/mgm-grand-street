@@ -55,18 +55,21 @@ h6 {
 button {
     margin: auto;
     position: relative;
-    height: 3rem;
-    width: 5rem;
+    height: 4rem;
+    width: 6.5rem;
     top: 8rem;
+    background-image: linear-gradient(to right, #FF0000, #D00000);
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 button:hover {
-    border: green solid 3px;
+    border: red solid 3px;
 }
 
 button:active {
-    height: 3.5rem;
-    width: 5.5rem;
+    height: 4.5rem;
+    width: 7rem;
 }
 
 #select-player-container {
@@ -194,7 +197,7 @@ img {
 #hp-bar {
     grid-column: 1 / span 1;
     grid-row: 5 / span 1;
-    background: linear-gradient(to right, red, yellow, green);
+    background-image: linear-gradient(to right, green, #00FF00);
     height: 2rem;
     color: green;
 }
@@ -259,7 +262,7 @@ img {
 #opponent-hp-bar {
     grid-column: 3 / span 1;
     grid-row: 5 / span 1;
-    background: linear-gradient(to right, red, yellow, green);
+    background-image: linear-gradient(to right, green, #00FF00);
     height: 2rem;
     color: green;
 }
