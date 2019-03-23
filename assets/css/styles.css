@@ -78,7 +78,11 @@ button:active {
     justify-content: space-around;
     align-items: center;
     background-color: black;
-    border-radius: 20px
+    border-radius: 20px;
+    font-family: 'Luckiest Guy', cursive;
+    color: red;
+    
+    margin: 2rem auto;
 }
 
 #mike-photo-holder {

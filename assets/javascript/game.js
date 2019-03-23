@@ -250,17 +250,20 @@ function winGame() {
     $('#' + item).fadeOut('slow')
     $('#attack').attr('disabled', true);
     // $(currentPlayer).animate({margin: 'auto'}, 'slow');
-    $('#select-player-container h1').text('You Win!!');
+    $('#select-player-container').text('YOU WIN! ' + currentPlayer.nickName + ' is the Champ!!');
     $('#welcome-text h2').text('You Win!! ' + currentPlayer.nickName + ' is the Champ!!');
     // $('#opponent-area').css('background-image', 'url("assets/images/arena-after-fight.jpg")');
+    $('#select-player-container').css('font-size', '6rem');
+    $('#select-player-container').css('color', 'green');
     });
 }
 
 function loseGame() {
     $('#' + currentPlayer.id).fadeOut('slow')
     $('#attack').attr('disabled', true);
-    // $('#select-player-container h1').text('You Win!!');
+    $('#select-player-container').text('GAME OVER! ' + currentOpponent.nickName + ' is the Champ!!');
     $('#welcome-text h2').text('You Lose!! ' + currentOpponent.nickName + ' is the new Champ!!');
+    $('#select-player-container').css('font-size', '6rem');
 };
 
 
