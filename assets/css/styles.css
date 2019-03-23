@@ -8,6 +8,7 @@ h1 {
     font-size: 45px;
     line-height: 40px;
     font-family: 'Luckiest Guy', cursive;
+    text-align: center;
 }
 
 h2 {
@@ -223,13 +224,13 @@ img {
 }
 
 #player-corner {
-    border: solid peru 1px;
+    
     max-width: 300px;
     height: 100%;
 }
 
 #opponent-corner {
-    border: solid peru 1px;
+    
     height: 100%;
 }
 

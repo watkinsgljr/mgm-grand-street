@@ -85,7 +85,7 @@ mikeCard.click(function () {
         playerSet = true;
         $(this).width('100%');
         $(this).height('100%');
-        $('#welcome-text h1').text('Select Your First Opponent');  
+        $('#welcome-text h2').text('Select Your First Opponent');  
         loadDash(mike);     
     } else if (mike.opponentDefeated == true) {
         alert("Fighter has already been defeated.  Please select another boxer.")
@@ -249,10 +249,10 @@ function winGame() {
     $.each(defeatedOpponents, function(index, item) {
     $('#' + item).fadeOut('slow')
     $('#attack').attr('disabled', true);
-    $(currentPlayer).animate({margin: 'auto'}, 'slow');
+    // $(currentPlayer).animate({margin: 'auto'}, 'slow');
     $('#select-player-container h1').text('You Win!!');
     $('#welcome-text h2').text('You Win!! ' + currentPlayer.nickName + ' is the Champ!!');
-    $('#opponent-area').css('background-image', 'url("assets/images/arena-after-fight.jpg")');
+    // $('#opponent-area').css('background-image', 'url("assets/images/arena-after-fight.jpg")');
     });
 }
 
