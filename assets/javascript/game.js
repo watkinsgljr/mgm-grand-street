@@ -214,14 +214,19 @@ $('#attack').click(function attack () {
     loadDash(currentPlayer);
     loadDash(currentOpponent);
     resizeOpponentHPBar(currentOpponent);
-    } if (currentOpponent.healthPoints > 0) {
+    } 
+    
+    if (currentOpponent.healthPoints > 0) {
         currentPlayer.healthPoints -= currentOpponent.counterAttack;
         resizeHPBar(currentPlayer);
     } else if (currentOpponent.healthPoints <= 0) {
         opponentDefeated();
-    } else if (currentPlayer.healthPoints <= 0) {
-        loseGame();
     } 
+    
+    if (currentPlayer.healthPoints <= 0) {
+        loseGame();
+    }
+
 }); 
 
 function opponentDefeated() {
@@ -246,7 +251,8 @@ function winGame() {
     $('#attack').attr('disabled', true);
     $(currentPlayer).animate({margin: 'auto'}, 'slow');
     $('#select-player-container h1').text('You Win!!');
-    $('#welcome-text h1').text('You Win!! ' + currentPlayer.nickName + ' is the Champ!!');
+    $('#welcome-text h2').text('You Win!! ' + currentPlayer.nickName + ' is the Champ!!');
+    $('#opponent-area').css('background-image', 'url("assets/images/arena-after-fight.jpg")');
     });
 }
 
